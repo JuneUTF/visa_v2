@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bteam.mapper.LoginMapper">
+
+    <select id="login" resultType="com.bteam.model.LoginModel" >
+    SELECT username, password
+	FROM visa_user
+	WHERE username = #{username}
+    </select>
+    <select id="loginrole" resultType="com.bteam.model.LoginModel" >
+    SELECT role
+	FROM visa_user_role
+	WHERE username = #{username}
+    </select>
+    
+    
+    <select id="selectCheckBlock" resultType="com.bteam.model.LoginModel"  >
+    SELECT logintimes	FROM visa_user	WHERE username = #{username}
+    </select>
+    
+    
+     <update id="setCheckBlock" parameterType="com.bteam.model.LoginModel" useGeneratedKeys="true" keyProperty="id">
+        UPDATE visa_user SET logintimes = #{logintimes} WHERE username = #{username}
+    </update>
+    
+</mapper>

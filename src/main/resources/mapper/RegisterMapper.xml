@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bteam.mapper.RegisterMapper">
+
+    <insert id="registerUser" parameterType="com.bteam.model.RegisterModel" >
+    INSERT INTO visa_user(     username    , password    , number   , name    , birthday    , sex   , country  , address   , visadate   , visatype   , status   , avatar    , note    , logintimes
+) 
+VALUES (      #{username}
+    ,  #{password}    ,  #{number}    ,  #{name}    ,  #{birthday}    ,  #{sex}    ,  #{country}
+    ,  #{address}   ,  #{visa}    ,  #{visatype}    ,  'PENDING'    ,  #{avatar}    ,  #{note}    ,  #{logintimes}
+)
+    </insert>
+    <insert id="registerAdmin" parameterType="com.bteam.model.RegisterModel" >
+       INSERT INTO visa_user(     username    , password    , number   , name    , birthday    , sex   , country  , address   , visadate   , visatype   , status   , avatar    , note    , logintimes
+) 
+VALUES (      #{username}
+    ,  #{password}    ,  #{number}    ,  #{name}    ,  #{birthday}    ,  #{sex}    ,  #{country}
+    ,  #{address}   ,  #{visa}    ,  #{visatype}    ,  'ACTIVE'    ,  #{avatar}    ,  #{note}    ,  #{logintimes}
+)
+    </insert>
+    <select id="checkuser"  resultType ="com.bteam.model.RegisterModel">
+    SELECT username FROM visa_user WHERE username= #{username}
+    </select>
+
+</mapper>

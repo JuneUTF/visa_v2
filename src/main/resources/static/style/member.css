@@ -1,0 +1,62 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+.member_home{
+    margin: 20px;
+    width: 100%;
+    text-align: center;
+    
+}
+.member_home h1{
+    padding: 20px;
+    color: #1d7874;
+}
+.member_home .username {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 10px;
+}
+.member_home a{
+    text-decoration: none;
+    height: 40px;
+    padding: 10px;
+    background-color: #1d7874;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.2s;
+}
+.member_home .btn_link {
+   /* float: right; */
+}
+.member_home .username .img{
+    margin: 10px;
+    padding-bottom: 50px ;
+    width: 100%;
+    position: relative;
+}
+.member_home .username .img img{
+    width: 100%; 
+    border-radius: 10px;    
+}
+.member_home .username .img a{
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+}
+.member_home  a:hover  {
+    background-color:#f4c095;
+    color: black;
+}
+/* css show user */
+.member_home .username .show_user{
+    padding: 10px;
+    padding-right: 0;
+}
+.member_home .username .show_user table tr{
+line-height: 30px;
+text-align: left;
+}
+.member_home .username .show_user table tr td{
+padding: 0 10px;
+}

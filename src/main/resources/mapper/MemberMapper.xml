@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bteam.mapper.MemberMapper">
+
+    <select id="memberSelectUsername" resultType="com.bteam.model.MemberModel" >
+   SELECT username,number,name,birthday,sex,country,address,visadate,visatype,status,avatar,note,logintimes
+ 	FROM visa_user WHERE username= #{username}
+    </select>
+    
+</mapper>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>Visa管理システム 登録データトサイト</title>
+</head>
+<body>
+    <div class="box">
+        <h1>登録データサイト</h1>
+        <div class="error">
+        <div class="warning" th:if="${warning}">
+          <p th:text="${warning}"></p>
+        </div>
+      </div>
+
+        <hr>
+        <form action="register" method="post" class="boxuser" enctype="multipart/form-data">
+        	<p>プロフィール写真</p>
+        	<input type="file" name="file" />
+        	<p>ユーザー名</p>
+    		<input type="text"  placeholder="ユーザー名を入力してください" name="username">
+            <p>パスワード</p>
+    		<input type="text"  placeholder="パスワードを入力してください" name="password">
+    		<p>在留カード番号</p>
+    		<input type="text"  placeholder="在留カード番号を入力してください" name="number">
+    		<p>名前</p>
+    		<input type="text"  placeholder="名前を入力してください" name="name">
+    		<p>生年月日</p>
+    		<input type="date" id="today" value="" name="birthday">
+    		<p>性別</p>
+    		<div class="radio">
+      			<input type="radio"  name="sex" value="男">
+      			<label for="sex">男性</label>
+      			<input type="radio"  name="sex" value="女">
+      			<label for="sex">女性</label>
+    	</div>
+    		<p>国籍</p>
+    		<input type="text"   name="country">
+    		<p>住所</p>
+    		<input type="text"  name="address">
+    		<p>ビザ期限</p>
+    		<input type="date" id="today" value="" name="visaDay">
+    		<p>在留資格</p>
+    		<select name="visatype">
+    			<option value="留学">留学</option>
+    			<option value="就労ビザ ">就労ビザ </option>
+    			<option value="投資経営ビザ">配投資経営ビザ</option>
+    			<option value="高度外国人材">高度外国人材</option>
+    			<option value="観光ビザ">観光ビザ</option>
+    			<option value="商用/観光ビザ">商用/観光ビザ</option>
+    			<option value="定住">定住</option>
+    			<option value="永住者配偶者">永住者配偶者</option>
+    			<option value="日本人配偶者">日本人配偶者</option>
+    			<option value="難民 ">難民 </option>
+    			<option value="医療滞在ビザ">医療滞在ビザ</option>
+    			<option value="更新中">更新</option>
+    		</select>
+    		<a class="a_home" th:href="@{/user}">ホーム</a>
+            <button type="submit">登録</button>
+           </form>
+    </div>
+</body>
+<script src="JavaScript/today.js"></script>
+</html>
