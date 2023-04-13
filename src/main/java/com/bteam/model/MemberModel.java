@@ -58,5 +58,6 @@ public class MemberModel {
 	private String visadate;
 	private String note;
 	private int logintimes;
+	private int color;
 }
 

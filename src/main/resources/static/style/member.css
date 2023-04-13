@@ -34,7 +34,7 @@
     position: relative;
 }
 .member_home .username .img img{
-    width: 100%; 
+    width: 325px; 
     border-radius: 10px;    
 }
 .member_home .username .img a{

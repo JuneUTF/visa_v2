@@ -1,0 +1,17 @@
+.list_a{
+	margin-top: 30px;
+}
+.list_a a{
+	text-decoration: none;
+    height: 40px;
+    padding: 10px;
+    background-color: #3b71ca;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.2s;
+}
+.list_a a:hover{
+	 background-color:#f4c095;
+    color: black;
+}

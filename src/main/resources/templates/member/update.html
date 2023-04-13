@@ -17,34 +17,31 @@
       </div>
 
         <hr>
-        <form action="register" method="post" class="boxuser" enctype="multipart/form-data">
-        	<p>プロフィール写真</p>
-        	<input type="file" name="file" />
+        <form action="update" method="post" class="boxuser" enctype="multipart/form-data"  th:each="user : ${user}">
         	<p>ユーザー名</p>
-    		<input type="text"  placeholder="ユーザー名を入力してください" name="username" >
-            <p>パスワード</p>
-    		<input type="text"  placeholder="パスワードを入力してください" name="password">
+    		<input type="text" th:value="${user.username}"  placeholder="ユーザー名を入力してください" name="username">
     		<p>在留カード番号</p>
-    		<input type="text"  placeholder="在留カード番号を入力してください" name="number">
+    		<input type="text" th:value="${user.number}"  placeholder="在留カード番号を入力してください" name="number">
     		<p>名前</p>
-    		<input type="text"  placeholder="名前を入力してください" name="name">
+    		<input type="text"  th:value="${user.name}" placeholder="名前を入力してください" name="name">
     		<p>生年月日</p>
-    		<input type="date" id="today" value="" name="birthday">
+    		<input type="date" id="today" th:value="${user.birthday}"  name="birthday">
     		<p>性別</p>
     		<div class="radio">
-      			<input type="radio"  name="sex" value="男">
-      			<label for="sex">男性</label>
-      			<input type="radio"  name="sex" value="女">
-      			<label for="sex">女性</label>
-    	</div>
+  				<input type="radio" name="sex" value="男" th:checked="${user.sex == '男'}" />
+  				<label for="sex">男性</label>
+  				<input type="radio" name="sex" value="女" th:checked="${user.sex == '女'}" />
+  				<label for="sex">女性</label>
+		</div>
     		<p>国籍</p>
-    		<input type="text"   name="country">
+    		<input type="text" th:value="${user.country}"  name="country">
     		<p>住所</p>
-    		<input type="text"  name="address">
+    		<input type="text" th:value="${user.address}" name="address">
     		<p>ビザ期限</p>
-    		<input type="date" id="today" value="" name="visaDay">
+    		<input type="date" th:value="${user.visadate}"　name="visaDay">
     		<p>在留資格</p>
     		<select name="visatype">
+    		<option  th:value="${user.visatype}"  th:text="${user.visatype}"></option>
     			<option value="留学">留学</option>
     			<option value="就労ビザ ">就労ビザ </option>
     			<option value="投資経営ビザ">配投資経営ビザ</option>

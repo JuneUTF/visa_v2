@@ -57,7 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 //					ログインページ表示設定
 					.loginPage("/login")
 //					ログインOKは移動するページ設定
-					.defaultSuccessUrl("/user")
+					.defaultSuccessUrl("/mypage")
 //					ログイン失敗ページ設定
 					.failureHandler((request, response, exception) -> {
 	                    response.sendRedirect("/login?error");
